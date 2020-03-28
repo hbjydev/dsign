@@ -56,6 +56,7 @@ export default ({ children, theme = DefaultTheme }: Props) => {
         body {
           color: var(--text-primary);
           font-size: var(--text-base);
+          font-family: sans-serif;
         }
 
         h1,h2,h3,h4,h5,h6 {
