@@ -67,13 +67,17 @@ export default ({ children, theme = DefaultTheme }: Props) => {
         * { box-sizing: border-box; }
 
         body {
-          color: var(--text-primary);
+          color: var(--foreground);
           font-size: var(--text-base);
           font-family: var(--text-sans);
         }
 
         h1,h2,h3,h4,h5,h6 {
           margin: 0;
+        }
+
+        a {
+          color: var(--color-success)
         }
       `}</style>
     </ThemeContext.Provider>
