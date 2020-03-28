@@ -59,6 +59,9 @@ export default ({ children, type = 'base', outline, translate, small }: Props) =
         color: var(--color-${type}${type == 'base' ? '' : '-fg'});
         box-shadow: none;
       }
+      button.outline:active {
+        background var(--color-${type}${type == 'base' ? '-fg' : '-dark'});
+      }
 
       button.small {
         height: 32px;
