@@ -34,6 +34,7 @@ export default ({ children, type = 'base', outline, translate, small }: Props) =
       }
       button:active {
         background: var(--color-${type}-dark);
+        box-shadow: none;
       }
       button:first-child {
         margin: 0 0.5rem 0 0;
