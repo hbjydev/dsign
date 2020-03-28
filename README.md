@@ -1,3 +1,6 @@
+![Continuous Deployment (dev)](https://github.com/itshaydendev/dsign/workflows/Continuous%20Deployment%20(dev)/badge.svg)
+![NPM](https://img.shields.io/npm/v/@itshaydendev/dsign?label=%40itshaydendev%2Fdsign&logo=npm)
+
 # Dsign
 
 Dsign is a component library built by [Hayden Young](https://github.com/itshaydendev) to be modern, easy-to-use and highly extensible.
