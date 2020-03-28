@@ -7,15 +7,22 @@ import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 # Button
 
 Buttons are used to perform actions (such as submitting a form), and can also
-be used as links in some circumstances
+be used as links in some circumstances.
 
-<br />
+> All styles are chainable (i.e. a small outline button, a normal animated button)
 
 ## Normal Button
 
+> Not setting the attribute `type` is the same as `type="base"`
+
 <Preview>
   <Story name="Normal Button">
-    <Button>Hello Button</Button>
+    <>
+      <Button>Hello Button</Button>
+      <Button type="success">Hello Button</Button>
+      <Button type="warning">Hello Button</Button>
+      <Button type="error">Hello Button</Button>
+    </>
   </Story>
 </Preview>
 
@@ -27,7 +34,7 @@ the color type when hovered over
 <Preview>
   <Story name="Outline Button">
     <div>
-      <Button type="base" outline>Hello Button</Button>
+      <Button outline>Hello Button</Button>
       <Button type="success" outline>Hello Button</Button>
       <Button type="warning" outline>Hello Button</Button>
       <Button type="error" outline>Hello Button</Button>
@@ -41,7 +48,12 @@ This button will translate itself up by 1px with a .2s `ease` transition.
 
 <Preview>
   <Story name="Animated Button">
-    <Button type="warning" translate>Hello Button</Button>
+    <>
+      <Button translate>Hello Button</Button>
+      <Button type="success" translate>Hello Button</Button>
+      <Button type="warning" translate>Hello Button</Button>
+      <Button type="error" translate>Hello Button</Button>
+    </>
   </Story>
 </Preview>
 
@@ -52,6 +64,11 @@ minimum width
 
 <Preview>
   <Story name="Small Button">
-    <Button small>Hello Button</Button>
+    <>
+      <Button small>Hello Button</Button>
+      <Button type="success" small>Hello Button</Button>
+      <Button type="warning" small outline>Hello Button</Button>
+      <Button type="error" small outline>Hello Button</Button>
+    </>
   </Story>
 </Preview>
