@@ -49,7 +49,11 @@ export default ({ children, theme = DefaultTheme }: Props) => {
       {children}
       <style jsx global>{`
         ${root(theme.light)}
-        ${theme.dark ? root(theme.dark) : ''}
+        ${theme.dark ? `
+          @media (prefers-color-scheme: dark) {
+            ${root(theme.dark)}
+          }
+        ` : ''}
 
         * { box-sizing: border-box; }
 
