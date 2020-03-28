@@ -14,7 +14,7 @@ const root = (theme: Theme) => `
     --color-base-fg: var(--color-foreground);
     --color-base-light: var(--color-background);
     --color-base: var(--color-background);
-    --color-base-dark: var(--color-background);
+    --color-base-dark: var(--accent-1);
 
     --color-success-fg: ${theme.color.success.foreground};
     --color-success-light: ${theme.color.success.dark};
