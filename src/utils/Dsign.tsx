@@ -32,9 +32,9 @@ const root = (theme: Theme) => `
     --color-error-dark: ${theme.color.error.dark};
 
     /* Text Styles */
-    --text-sans: ${theme.text.sans}
-    --text-serif: ${theme.text.serif}
-    --text-mono: ${theme.text.mono}
+    --text-sans: ${theme.text.sans};
+    --text-serif: ${theme.text.serif};
+    --text-mono: ${theme.text.mono};
 
     --text-small: ${theme.text.small};
     --text-base: ${theme.text.base};
