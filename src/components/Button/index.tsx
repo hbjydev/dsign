@@ -35,7 +35,7 @@ export default ({ children, type = 'neutral', outline, translate }: Props) => (
       button.outline {
         background: var(--color-neutral-bg);
         color: var(--color-${type}-bg);
-        border: 2px solid var(--color-${type}-bg);
+        border: 2px solid ${type == 'neutral' ? 'var(--color-neutral-fg)' : `var(--color-${type}-bg)`};
         box-shadow: none;
         transform: none;
       }
