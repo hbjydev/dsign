@@ -6,9 +6,10 @@ type Props = {
   type?: 'primary' | 'accent' | 'neutral' | 'warning' | 'success' | 'info';
   outline?: boolean;
   translate?: boolean;
+  small?: boolean;
 }
-export default ({ children, type = 'neutral', outline, translate }: Props) => (
-  <button className={`${outline ? 'outline': ''} ${translate ? 'translate' : ''}`}>
+export default ({ children, type = 'neutral', outline, translate, small }: Props) => (
+  <button className={`${outline ? 'outline': ''} ${translate ? 'translate' : ''} ${small ? 'small' : ''}`}>
     {children}
     <style jsx>{`
       button {
@@ -43,6 +44,11 @@ export default ({ children, type = 'neutral', outline, translate }: Props) => (
         background: var(--color-${type}-bg);
         color: var(--color-${type}-fg);
         box-shadow: none;
+      }
+
+      button.small {
+        height: 32px;
+        min-width: 0;
       }
     `}</style>
   </button>
