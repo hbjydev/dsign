@@ -19,16 +19,15 @@ jobs:
         env:
           cache-name: cache-node-modules
         with:
-          path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          path: ~/.yarn # npm cache files are stored in `~/.npm` on Linux/macOS
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
       - run: yarn
-      - run: yarn collect-docs
-      - run: yarn type-check
-      - run: yarn build:comps
+      - run: yarn typecheck
+      - run: yarn build
       - uses: actions/setup-node@v1
         with:
           registry-url: 'https://npm.pkg.github.com/itshaydendev'
