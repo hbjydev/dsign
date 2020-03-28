@@ -19,7 +19,7 @@ jobs:
         env:
           cache-name: cache-node-modules
         with:
-          path: ~/.yarn # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.cache/yarn
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
