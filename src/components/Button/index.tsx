@@ -27,9 +27,13 @@ export default ({ children, type = 'base', outline, translate, small }: Props) =
         border: none;
         box-shadow: var(--shadow-small);
         margin: 0 0.5rem;
+        outline: none;
       }
       button:hover {
         box-shadow: var(--shadow-medium);
+      }
+      button:active {
+        background: var(--color-${type}-dark);
       }
       button:first-child {
         margin: 0 0.5rem 0 0;
