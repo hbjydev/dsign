@@ -21,7 +21,7 @@ export default ({ children }: Props) => {
       <style jsx>{`
         header {
           height: 64px;
-          background: var(--color-neutral-bg);
+          background: var(--color-background);
           font-size: var(--text-small);
           position: sticky;
           top: 0;
