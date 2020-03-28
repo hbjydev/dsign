@@ -69,7 +69,7 @@ export default ({ children, theme = DefaultTheme }: Props) => {
         body {
           color: var(--text-primary);
           font-size: var(--text-base);
-          font-family: var(--text-serif);
+          font-family: var(--text-sans);
         }
 
         h1,h2,h3,h4,h5,h6 {
