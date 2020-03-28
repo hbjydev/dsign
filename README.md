@@ -1,17 +1,12 @@
 # Dsign
 
-Dsign is a component library built by
-[Hayden Young](https://github.com/itshaydendev) to be modern, easy-to-use and
-highly extensible.
+Dsign is a component library built by [Hayden Young](https://github.com/itshaydendev) to be modern, easy-to-use and highly extensible.
 
-Its main use case is for the [Playroles](https://playroles.app) suite of apps,
-but it's easily adaptable to any project through its Context-powered theming
-system.
+Its main use case is for the [Playroles](https://playroles.app) suite of apps, but it's easily adaptable to any project through its Context-powered theming system.
 
 ## Getting Started
 
-To begin, install the library and `styled-jsx`. This is an external dependency,
-so as to keep the bundle size of the library small.
+To begin, install the library and `styled-jsx`. This is an external dependency, so as to keep the bundle size of the library small.
 
 ```bash
 # With Yarn (recommended)
@@ -21,8 +16,7 @@ $ yarn add dsign styled-jsx
 $ npm install dsign styled-jsx
 ```
 
-Then, all you need to do is import and use the `Dsign` component as a 'shell'
-around your app.
+Then, all you need to do is import and use the `Dsign` component as a 'shell' around your app.
 
 ```jsx
 import Dsign from 'dsign'
@@ -53,13 +47,8 @@ This will open the Storybook dev environment and you can start working!
 
 ## Contributing
 
-As Dsign is open-source, it's be great to see you contribute to its
-development!
+As Dsign is open-source, it's be great to see you contribute to its development!
 
-See a component you think you could improve? Want to add a new one? Want to
-help keep our bundle size small?
-[Make a fork of the Github repo](https://github.com/itshaydendev/dsign/fork)
-and submit a PR!
+See a component you think you could improve? Want to add a new one? Want to help keep our bundle size small? [Make a fork of the Github repo](https://github.com/itshaydendev/dsign/fork) and submit a PR!
 
-Spotted an issue or want to ask a question? [Submit an issue to the Github
-repo](https://github.com/itshaydendev/dsign/issues/new)
+Spotted an issue or want to ask a question? [Submit an issue to the Github repo](https://github.com/itshaydendev/dsign/issues/new)
