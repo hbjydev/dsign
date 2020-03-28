@@ -60,7 +60,8 @@ export default ({ children, type = 'base', outline, translate, small }: Props) =
         box-shadow: none;
       }
       button.outline:active {
-        background var(--color-${type}${type == 'base' ? '-fg' : '-dark'});
+        background: var(--color-${type}${type == 'base' ? '-fg' : '-dark'});
+        border: var(--color-${type}${type == 'base' ? '-fg' : '-dark'});
       }
 
       button.small {
