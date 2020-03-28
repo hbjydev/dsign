@@ -13,16 +13,16 @@ To begin, install the library and `styled-jsx`. This is an external dependency, 
 
 ```bash
 # With Yarn (recommended)
-$ yarn add dsign styled-jsx
+$ yarn add @itshaydendev/dsign styled-jsx
 
 # With NPM
-$ npm install dsign styled-jsx
+$ npm install @itshaydendev/dsign styled-jsx
 ```
 
 Then, all you need to do is import and use the `Dsign` component as a 'shell' around your app.
 
 ```jsx
-import Dsign from 'dsign'
+import Dsign from '@itshaydendev/dsign'
 
 export default ({ children }) => (
   <Dsign>
