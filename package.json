@@ -1,7 +1,6 @@
 {
   "name": "dsign",
   "version": "0.1.0",
-  "private": true,
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "scripts": {
