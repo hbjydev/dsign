@@ -1,17 +1,45 @@
 import { action } from '@storybook/addon-actions';
-import { Button } from '..';
+import Dsign, { Button } from '..';
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 
 <Meta title="Button" component={Button} />
 
+<Dsign>
+
 # Button
 
-<Story name="Button 1">
-  <Button onClick={action('clicked')}>Hello Button</Button>
-</Story>
+Buttons are used to perform actions (such as submitting a form), and can also
+be used as links in some circumstances
+
+<br />
+
+## Normal Button
 
 <Preview>
-  <Story name="Button 2">
-    <Button onClick={action('clicked')}>Hello Button</Button>
+  <Story name="Normal Button">
+    <Button>Hello Button</Button>
   </Story>
 </Preview>
+
+## Outline Button
+
+This button keeps the color & border from the color type it uses, but will use
+the color type when hovered over
+
+<Preview>
+  <Story name="Outline Button">
+    <Button type="primary" outline>Hello Button</Button>
+  </Story>
+</Preview>
+
+## Animated Button
+
+This button will translate itself up by 1px with a .2s `ease` transition.
+
+<Preview>
+  <Story name="Animated Button">
+    <Button type="warning" translate>Hello Button</Button>
+  </Story>
+</Preview>
+
+</Dsign>
