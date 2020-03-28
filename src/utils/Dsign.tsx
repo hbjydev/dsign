@@ -32,6 +32,10 @@ const root = (theme: Theme) => `
     --color-error-dark: ${theme.color.error.dark};
 
     /* Text Styles */
+    --text-sans: ${theme.text.sans}
+    --text-serif: ${theme.text.serif}
+    --text-mono: ${theme.text.mono}
+
     --text-small: ${theme.text.small};
     --text-base: ${theme.text.base};
     --text-large: ${theme.text.large};
@@ -65,7 +69,7 @@ export default ({ children, theme = DefaultTheme }: Props) => {
         body {
           color: var(--text-primary);
           font-size: var(--text-base);
-          font-family: sans-serif;
+          font-family: var(--text-serif);
         }
 
         h1,h2,h3,h4,h5,h6 {

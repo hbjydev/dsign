@@ -22,6 +22,10 @@ export type Theme = {
     error: Color;
   },
   text: {
+    sans: string;
+    serif?: string;
+    mono: string;
+
     small: string;
     base: string;
     large: string;
@@ -79,6 +83,9 @@ export const DefaultTheme: ThemeWrapper = {
       }
     },
     text: {
+      sans: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+      serif: 'serif',
+      mono: 'monospace',
       small: '0.875em',
       base: '1em',
       large: '2em',
