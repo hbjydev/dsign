@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { ReactNode } from 'react';
+import { ColorType } from 'utils/ThemeContext';
 
 type Props = {
   children: ReactNode | ReactNode[];
-  type?: 'primary' | 'accent' | 'neutral' | 'warning' | 'success' | 'info';
+  type?: ColorType;
   outline?: boolean;
   translate?: boolean;
   small?: boolean;
 }
-export default ({ children, type = 'neutral', outline, translate, small }: Props) => (
+export default ({ children, type = 'base', outline, translate, small }: Props) => (
   <button className={`${outline ? 'outline': ''} ${translate ? 'translate' : ''} ${small ? 'small' : ''}`}>
     {children}
     <style jsx>{`
@@ -21,28 +22,36 @@ export default ({ children, type = 'neutral', outline, translate, small }: Props
         align-items: center;
         height: 50px;
         transition: all .2s ease 0s;
-        background: var(--color-${type}-bg);
+        background: var(--color-${type});
         color: var(--color-${type}-fg);
         border: none;
         box-shadow: var(--shadow-small);
+        margin: 0 0.5rem;
       }
       button:hover {
         box-shadow: var(--shadow-medium);
       }
+      button:first-child {
+        margin: 0 0.5rem 0 0;
+      }
+      button:last-child {
+        margin: 0 0 0 0.5rem;
+      }
+
       button.translate:hover {
         transform: translate3d(0px, -1px, 0px);
       }
 
       button.outline {
-        background: var(--color-neutral-bg);
-        color: var(--color-${type}-bg);
-        border: 2px solid ${type == 'neutral' ? 'var(--color-neutral-fg)' : `var(--color-${type}-bg)`};
+        background: var(--color-background);
+        color: var(--color-${type}${type == 'base' ? '-fg' : ''});
+        border: 2px solid var(--color-${type}${type == 'base' ? '-fg' : ''});
         box-shadow: none;
         transform: none;
       }
       button.outline:hover {
-        background: var(--color-${type}-bg);
-        color: var(--color-${type}-fg);
+        background: var(--color-${type}${type == 'base' ? '-fg' : ''});
+        color: var(--color-${type}${type == 'base' ? '' : '-fg'});
         box-shadow: none;
       }
 

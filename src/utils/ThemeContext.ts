@@ -1,28 +1,31 @@
 import { createContext } from 'react';
 
+export type ColorType = 'base' | 'success' | 'warning' | 'error';
+
 export type Color = {
+  dark: string;
+  base: string;
+  light: string;
+
   foreground: string;
-  background: string;
 }
 
 export type Theme = {
   color: {
-    primary: Color;
-    accent: Color;
-    neutral: Color;
-    warning: Color;
+    background: string;
+    foreground: string;
+
+    accents: string[];
+
     success: Color;
-    info: Color;
+    warning: Color;
+    error: Color;
   },
   text: {
     small: string;
     base: string;
     large: string;
     extraLarge: string;
-
-    primary: string;
-    secondary: string;
-    light: string;
   },
   shadow: {
     small: string;
@@ -39,40 +42,47 @@ export type ThemeWrapper = {
 export const DefaultTheme: ThemeWrapper = {
   light: {
     color: {
-      primary: {
+      background: '#fff',
+      foreground: '#000',
+
+      accents: [
+        '#fafafa',
+        '#eaeaea',
+        '#999',
+        '#888',
+        '#666',
+        '#444',
+        '#333',
+        '#111'
+      ],
+
+      success: {
         foreground: '#fff',
-        background: '#0070f3'
+
+        dark: '#0366d6',
+        base: '#0070f3',
+        light: '#3291ff'
       },
-      accent: {
+      error: {
         foreground: '#fff',
-        background: '#0070f3'
-      },
-      neutral: {
-        foreground: '#000',
-        background: '#fff'
+
+        dark: '#c00',
+        base: '#e00',
+        light: '#ff1a1a'
       },
       warning: {
         foreground: '#fff',
-        background: '#0070f3'
-      },
-      success: {
-        foreground: '#fff',
-        background: '#0070f3'
-      },
-      info: {
-        foreground: '#fff',
-        background: '#0070f3'
+
+        dark: '#f49b0b',
+        base: '#f5a623',
+        light: '#f7b955'
       }
     },
     text: {
       small: '0.875em',
       base: '1em',
       large: '2em',
-      extraLarge: '3em',
-
-      light: '#666',
-      primary: '#111',
-      secondary: '#444'
+      extraLarge: '3em'
     },
     shadow: {
       small: '0 5px 24px rgba(0, 0, 0, 0.12)',

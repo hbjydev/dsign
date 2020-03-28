@@ -4,33 +4,38 @@ import ThemeContext, { DefaultTheme, ThemeWrapper, Theme } from './ThemeContext'
 const root = (theme: Theme) => `
   :root {
     /* Colour Pallette */
-    --color-primary-fg: ${theme.color.primary.foreground};
-    --color-primary-bg: ${theme.color.primary.background};
+    --color-background: ${theme.color.background};
+    --color-foreground: ${theme.color.foreground};
 
-    --color-accent-fg: ${theme.color.accent.foreground};
-    --color-accent-bg: ${theme.color.accent.background};
+    ${theme.color.accents.map(
+      (a, i) => `--accent-${i}: ${a};`
+    ).join('\n')}
 
-    --color-neutral-fg: ${theme.color.neutral.foreground};
-    --color-neutral-bg: ${theme.color.neutral.background};
-
-    --color-warning-fg: ${theme.color.warning.foreground};
-    --color-warning-bg: ${theme.color.warning.background};
+    --color-base-fg: var(--color-foreground);
+    --color-base-light: var(--color-background);
+    --color-base: var(--color-background);
+    --color-base-dark: var(--color-background);
 
     --color-success-fg: ${theme.color.success.foreground};
-    --color-success-bg: ${theme.color.success.background};
+    --color-success-light: ${theme.color.success.dark};
+    --color-success: ${theme.color.success.base};
+    --color-success-dark: ${theme.color.success.dark};
 
-    --color-info-fg: ${theme.color.info.foreground};
-    --color-info-bg: ${theme.color.info.background};
+    --color-warning-fg: ${theme.color.warning.foreground};
+    --color-warning-light: ${theme.color.warning.dark};
+    --color-warning: ${theme.color.warning.base};
+    --color-warning-dark: ${theme.color.warning.dark};
+
+    --color-error-fg: ${theme.color.error.foreground};
+    --color-error-light: ${theme.color.error.dark};
+    --color-error: ${theme.color.error.base};
+    --color-error-dark: ${theme.color.error.dark};
 
     /* Text Styles */
     --text-small: ${theme.text.small};
     --text-base: ${theme.text.base};
     --text-large: ${theme.text.large};
     --text-xl: ${theme.text.extraLarge};
-
-    --text-light: ${theme.text.light};
-    --text-primary: ${theme.text.primary};
-    --text-secondary: ${theme.text.secondary};
 
     /* Shadow Styles */
     --shadow-small: ${theme.shadow.small};
