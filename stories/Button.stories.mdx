@@ -13,46 +13,44 @@ be used as links in some circumstances.
 
 ## Normal Button
 
-> Not setting the attribute `type` is the same as `type="base"`
-
 <Preview>
   <Story name="Normal Button">
     <>
       <Button>Hello Button</Button>
-      <Button type="success">Hello Button</Button>
-      <Button type="warning">Hello Button</Button>
-      <Button type="error">Hello Button</Button>
+      <Button color="success">Hello Button</Button>
+      <Button color="warning">Hello Button</Button>
+      <Button color="error">Hello Button</Button>
     </>
   </Story>
 </Preview>
 
-## Outline Button
+## Filled Button
 
-This button keeps the color & border from the color type it uses, but will use
-the color type when hovered over
+This button keeps the background and foreground from the color type it uses,
+but will use the base type when hovered over
 
 <Preview>
-  <Story name="Outline Button">
+  <Story name="Filled Button">
     <div>
-      <Button outline>Hello Button</Button>
-      <Button type="success" outline>Hello Button</Button>
-      <Button type="warning" outline>Hello Button</Button>
-      <Button type="error" outline>Hello Button</Button>
+      <Button filled>Hello Button</Button>
+      <Button color="success" filled>Hello Button</Button>
+      <Button color="warning" filled>Hello Button</Button>
+      <Button color="error" filled>Hello Button</Button>
     </div>
   </Story>
 </Preview>
 
-## Animated Button
+## Shadow Button
 
-This button will translate itself up by 1px with a .2s `ease` transition.
+This button has a drop shadow, which will animate as you hover.
 
 <Preview>
-  <Story name="Animated Button">
+  <Story name="Shadow Button">
     <>
-      <Button translate>Hello Button</Button>
-      <Button type="success" translate>Hello Button</Button>
-      <Button type="warning" translate>Hello Button</Button>
-      <Button type="error" translate>Hello Button</Button>
+      <Button shadow>Hello Button</Button>
+      <Button color="success" shadow>Hello Button</Button>
+      <Button color="warning" shadow filled>Hello Button</Button>
+      <Button color="error" shadow filled>Hello Button</Button>
     </>
   </Story>
 </Preview>
@@ -66,9 +64,9 @@ minimum width
   <Story name="Small Button">
     <>
       <Button small>Hello Button</Button>
-      <Button type="success" small>Hello Button</Button>
-      <Button type="warning" small outline>Hello Button</Button>
-      <Button type="error" small outline>Hello Button</Button>
+      <Button color="success" small>Hello Button</Button>
+      <Button color="warning" small filled>Hello Button</Button>
+      <Button color="error" small filled>Hello Button</Button>
     </>
   </Story>
 </Preview>

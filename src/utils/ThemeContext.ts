@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-export type ColorType = 'base' | 'success' | 'warning' | 'error';
+export type ColorType = 'success' | 'warning' | 'error';
 
 export type Color = {
   dark: string;

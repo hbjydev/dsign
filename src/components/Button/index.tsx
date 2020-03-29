@@ -4,15 +4,24 @@ import { ColorType } from 'utils/ThemeContext';
 
 type Props = {
   children: ReactNode | ReactNode[];
-  type?: ColorType;
-  outline?: boolean;
-  translate?: boolean;
+  color?: ColorType;
+  filled?: boolean;
   small?: boolean;
+  shadow?: boolean;
 }
-export default ({ children, type = 'base', outline, translate, small }: Props) => (
-  <button className={`${outline ? 'outline': ''} ${translate ? 'translate' : ''} ${small ? 'small' : ''}`}>
+export default ({ children, color, filled, small, shadow }: Props) => (
+  <button className={`${filled ? 'filled': ''} ${small ? 'small' : ''} ${shadow ? 'shadow' : ''}`}>
     {children}
     <style jsx>{`
+      button {
+        --btn-foreground-base: var(${color ? `--color-${color}` : '--accent-4'});
+        --btn-background-base: var(${color ? `--color-${color}-fg` : '--color-background'});
+        --btn-border-base: var(${color ? `--color-${color}` : '--accent-1'});
+
+        --btn-foreground-hover: var(${color ? `--color-${color}-fg` : '--color-background'});
+        --btn-background-hover: var(${color ? `--color-${color}` : '--color-foreground'});
+        --btn-border-hover: var(${color ? `--color-${color}` : '--color-foreground'});
+      }
       button {
         display: inline-flex;
         min-width: 200px;
@@ -22,18 +31,20 @@ export default ({ children, type = 'base', outline, translate, small }: Props) =
         align-items: center;
         height: 50px;
         transition: all .2s ease 0s;
-        background: var(--color-${type});
-        color: var(--color-${type}-fg);
-        border: none;
-        box-shadow: var(--shadow-small);
+        background: var(--btn-background-base);
+        color: var(--btn-foreground-base);
+        border: 1px solid var(--btn-border-base);
         margin: 0 0.5rem;
         outline: none;
+        font-size: var(--text-small);
       }
       button:hover {
-        box-shadow: var(--shadow-medium);
+        background: var(--btn-background-hover);
+        color: var(--btn-foreground-hover);
+        border: 1px solid var(--btn-border-hover);
       }
       button:active {
-        background: var(--color-${type}-dark);
+        background: var(--color-dark);
         box-shadow: none;
       }
       button:first-child {
@@ -43,25 +54,23 @@ export default ({ children, type = 'base', outline, translate, small }: Props) =
         margin: 0 0 0 0.5rem;
       }
 
-      button.translate:hover {
-        transform: translate3d(0px, -1px, 0px);
+      button.filled {
+        background: var(--btn-background-hover);
+        color: var(--btn-foreground-hover);
+        border: 1px solid var(--btn-border-hover);
+      }
+      button.filled:hover {
+        background: var(${color ? '--btn-background-base' : '--btn-foreground-hover'});
+        color: var(${color ? '--btn-foreground-base' : '--btn-background-hover'});
+        border: 1px solid var(${color ? '--btn-border-base' : '--btn-border-hover'});
       }
 
-      button.outline {
-        background: var(--color-background);
-        color: var(--color-${type}${type == 'base' ? '-fg' : ''});
-        border: 2px solid var(--color-${type}${type == 'base' ? '-fg' : ''});
-        box-shadow: none;
-        transform: none;
+      button.shadow {
+        box-shadow: var(--shadow-small);
       }
-      button.outline:hover {
-        background: var(--color-${type}${type == 'base' ? '-fg' : ''});
-        color: var(--color-${type}${type == 'base' ? '' : '-fg'});
-        box-shadow: none;
-      }
-      button.outline:active {
-        background: var(--color-${type}${type == 'base' ? '-fg' : '-dark'});
-        border: var(--color-${type}${type == 'base' ? '-fg' : '-dark'});
+      button.shadow:hover {
+        box-shadow: var(--shadow-medium);
+        transform: translate3d(0px, -1px, 0px);
       }
 
       button.small {
