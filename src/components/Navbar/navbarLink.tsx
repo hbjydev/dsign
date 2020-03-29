@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { HTMLAttributes } from 'react';
+import { ReactNode } from 'react';
 
 type Props = {
-  active?: boolean
+  active?: boolean;
+  to: string;
+  children?: ReactNode;
 }
-export default ({ active, children, ...props }: Props & HTMLAttributes<HTMLAnchorElement>) => (
-  <a className={active ? 'active' : undefined} {...props}>
+export default ({ active, children, to }: Props) => (
+  <a className={active ? 'active' : undefined} href={to}>
     {children}
     <style jsx>{`
       a {
