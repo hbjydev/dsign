@@ -1,15 +1,16 @@
 import React from 'react';
-import Dsign, { Navbar, Avatar, NavbarSection, NavbarLink } from '..';
+import Dsign, { Navbar, NavbarSection, NavbarLink } from '..';
 import { AppProps } from 'next/app';
 
 export default ({ Component, pageProps }: AppProps) => (
   <Dsign>
     <Navbar>
       <NavbarSection>
-        <img src="https://github.com/itshaydendev.png" width="32px" style={{ display: 'flex', marginRight: '1rem' }} />
-        <NavbarLink href="#">Home</NavbarLink>
-        <NavbarLink href="#">Home</NavbarLink>
-        <NavbarLink href="#">Home</NavbarLink>
+        <a href="/">
+          <img src="/logo.svg" width="32px" style={{ display: 'flex', marginRight: '1rem' }} />
+        </a>
+        <NavbarLink to="/docs">Docs</NavbarLink>
+        <NavbarLink to="https://github.com/itshaydendev/dsign">GitHub</NavbarLink>
       </NavbarSection>
     </Navbar>
     <Component {...pageProps} />
