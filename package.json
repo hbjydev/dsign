@@ -3,13 +3,16 @@
   "version": "0.4.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "repository": "git+https://github.com/itshaydendev/dsign",
   "scripts": {
+    "dev": "yarn start & yarn next",
+    "next": "next dev",
     "start": "rollup -c -w",
+    "start:docs": "next",
     "build": "rollup -c",
-    "typecheck": "tsc",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build:docs": "next build",
+    "typecheck": "tsc"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -18,15 +21,10 @@
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
     "@babel/preset-typescript": "^7.9.0",
-    "@storybook/addon-actions": "^5.3.17",
-    "@storybook/addon-docs": "^5.3.17",
-    "@storybook/addon-info": "^5.3.17",
-    "@storybook/addon-links": "^5.3.17",
-    "@storybook/addons": "^5.3.17",
-    "@storybook/react": "^5.3.17",
     "@types/react": "^16.9.26",
     "babel-loader": "^8.1.0",
     "react": "16.13.1",
+    "react-dom": "^16.13.1",
     "react-is": "^16.13.1",
     "rollup": "^2.2.0",
     "rollup-plugin-babel": "^4.4.0",
@@ -39,7 +37,10 @@
   },
   "peerDependencies": {
     "react": ">= 16.x.x",
+    "react-dom": ">= 16.x.x",
     "styled-jsx": ">= 3.x.x"
   },
-  "dependencies": {}
+  "dependencies": {
+    "next": "^9.3.2"
+  }
 }

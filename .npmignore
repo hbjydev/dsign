@@ -1,5 +1,6 @@
-stories/
-.storybook/
 node_modules/
 .github/
 src/
+pages/
+lib/
+.next
