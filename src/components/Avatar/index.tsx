@@ -19,7 +19,7 @@ export default ({ small, large, rounded, round, ...props }: HTMLAttributes<HTMLI
       img {
         width: 64px;
         height: 64px;
-        object-fill: cover;
+        object-fit: cover;
       }
       img.small {
         width: 32px;

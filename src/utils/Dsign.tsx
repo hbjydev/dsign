@@ -67,6 +67,8 @@ export default ({ children, theme = DefaultTheme }: Props) => {
         * { box-sizing: border-box; }
 
         body {
+          padding: 0;
+          margin: 0;
           color: var(--foreground);
           font-size: var(--text-base);
           font-family: var(--text-sans);

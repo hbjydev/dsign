@@ -39,11 +39,12 @@ export default ({ children }: Props) => {
 
         header :global(.wrapper) {
           display: flex;
-        }
-        header :global(.wrapper) > :global(div.section) {
-          width: 100%;
+          align-items: center;
         }
       `}</style>
     </header>
   );
 }
+
+export { default as NavbarSection } from './navbarSection';
+export { default as NavbarLink } from './navbarLink';
