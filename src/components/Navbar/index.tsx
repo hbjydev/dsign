@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ReactNode, useState, useEffect } from 'react';
+import Container from 'components/Container';
 
 type Props = {
   children: ReactNode[] | ReactNode;
@@ -15,9 +16,9 @@ export default ({ children }: Props) => {
 
   return (
     <header className={scroll ? 'scrolled' : ''}>
-      <div className="wrapper">
+      <Container className="wrapper">
         {children}
-      </div>
+      </Container>
       <style jsx>{`
         header {
           height: 64px;
@@ -31,19 +32,15 @@ export default ({ children }: Props) => {
           box-shadow: none;
           transition: box-shadow .2s ease;
         }
+
         header.scrolled {
           box-shadow: var(--shadow-medium);
         }
 
-        header .wrapper {
-          max-width: 1024px;
-          margin: 0 auto;
-          width: 100%;
-          padding: 0 2rem;
+        header :global(.wrapper) {
           display: flex;
         }
-
-        header .wrapper > :global(div.section) {
+        header :global(.wrapper) > :global(div.section) {
           width: 100%;
         }
       `}</style>
