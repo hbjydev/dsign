@@ -78,8 +78,35 @@ export default ({ children, theme = DefaultTheme }: Props) => {
           margin: 0;
         }
 
+        h1 {
+          font-family: var(--text-sans);
+          color: inherit;
+          line-height: 1.5;
+          font-size: 3rem;
+          letter-spacing: -.066875rem;
+          font-weight: 700;
+        }
+
+        h3 {
+          font-family: var(--text-sans);
+          color: inherit;
+          line-height: 1.5;
+          font-size: 1.5rem;
+          letter-spacing: -.029375rem;
+          font-weight: 600;
+        }
+
+        p {
+          color: inherit;
+          font-family: var(--text-sans);
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 1.6;
+        }
+
         a {
-          color: var(--color-success)
+          color: var(--color-success);
+          text-decoration: none;
         }
       `}</style>
     </ThemeContext.Provider>
