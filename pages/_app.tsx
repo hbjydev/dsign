@@ -13,12 +13,14 @@ export default withRouter(({ Component, pageProps, router }: AppProps) => (
     <Navbar>
       <NavbarSection>
         <a href="/">
-          <img src="/logo.svg" width="32px" style={{ display: 'flex', marginRight: '1rem' }} />
+          <img src="/logo.svg" width="24px" style={{ display: 'flex', marginRight: '1rem' }} />
         </a>
         <NavbarLink to="/docs" active={router.pathname.startsWith('/docs')}>Docs</NavbarLink>
         <NavbarLink to="https://github.com/itshaydendev/dsign">GitHub</NavbarLink>
       </NavbarSection>
     </Navbar>
-    <Component {...pageProps} />
+    <main>
+      <Component {...pageProps} />
+    </main>
   </Dsign>
 ));
