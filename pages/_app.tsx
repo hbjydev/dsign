@@ -8,6 +8,7 @@ export default withRouter(({ Component, pageProps, router }: AppProps) => (
   <Dsign>
     <Head>
       <title>Dsign</title>
+      <link rel="shortcut icon" href="/logo.svg" type="image/svg" />
       <meta name="description" content="Dsign is a component library built by @itshaydendev to be modern, easy-to-use and highly extensible." />
     </Head>
     <Navbar>
